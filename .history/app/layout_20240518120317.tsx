@@ -26,6 +26,8 @@ export default function RootLayout({
             attribute="class"
             forcedTheme="dark"
             storageKey="streamers-theme"
+            enableSystem
+            disableTransitionOnChange
           >
             {children}
           </ThemeProvider>
