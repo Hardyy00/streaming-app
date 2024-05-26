@@ -1,5 +1,4 @@
 import Navbar from "./_components/navbar";
-import Sidebar from "./_components/sidebar";
 
 const BrowseLayout: React.FC<{ children: React.ReactNode }> = ({
   children,
