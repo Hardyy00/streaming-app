@@ -20,7 +20,7 @@ const Search: React.FC = () => {
 
     const url = qs.stringifyUrl(
       {
-        url: "/search",
+        url: "/",
         query: { term: value },
       },
       { skipEmptyString: true }

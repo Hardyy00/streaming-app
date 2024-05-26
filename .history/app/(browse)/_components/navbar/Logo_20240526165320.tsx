@@ -12,7 +12,7 @@ export const Logo: React.FC = () => {
   return (
     <Link href="/">
       <div className="flex items-center   gap-x-4 hover:opacity-75 transition ">
-        <div className="bg-white rounded-full p-1 mr-10 shrink-0 lg:mr-0 lg:shrink">
+        <div className="bg-white rounded-full p-1 mr-2 shrink-0">
           <Image src={"/smile.svg"} alt="logo" height="32" width="32" />
         </div>
 
