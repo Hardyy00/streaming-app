@@ -1,4 +1,3 @@
-import Container from "./_components/Container";
 import Navbar from "./_components/navbar";
 import Sidebar from "./_components/sidebar";
 

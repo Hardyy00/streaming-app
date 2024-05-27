@@ -3,7 +3,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@radix-ui/react-tooltip";
 
 interface HintProps {
   label: String;
@@ -21,15 +21,28 @@ const Hint: React.FC<HintProps> = ({
   align,
 }) => {
   return (
+    // <TooltipProvider>
+    //   <Tooltip delayDuration={0}>
+    //     <TooltipTrigger asChild>{children}</TooltipTrigger>
+    //     <TooltipContent
+    //       className="text-black bg-white"
+    //       side={side}
+    //       align={align}
+    //     >
+    //       <p className="font-semibold">{label}</p>
+    //     </TooltipContent>
+    //   </Tooltip>
+    // </TooltipProvider>
+
     <TooltipProvider>
       <Tooltip delayDuration={0}>
-        <TooltipTrigger asChild={asChild}>{children}</TooltipTrigger>
+        <TooltipTrigger>Hover</TooltipTrigger>
         <TooltipContent
-          className="text-black bg-white rounded-[0.5rem]"
           side={side}
           align={align}
+          className="text-black bg-white"
         >
-          <p className="font-semibold">{label}</p>
+          <p>Add to library</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

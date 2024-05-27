@@ -25,7 +25,7 @@ const Hint: React.FC<HintProps> = ({
       <Tooltip delayDuration={0}>
         <TooltipTrigger asChild={asChild}>{children}</TooltipTrigger>
         <TooltipContent
-          className="text-black bg-white rounded-[0.5rem]"
+          className="text-black bg-white rounded-[0.]"
           side={side}
           align={align}
         >
