@@ -6,6 +6,7 @@ import Wrapper from "./wrapper";
 const Sidebar = async () => {
   const recommended = await getRecommended();
 
+  console.log(recommended);
   return (
     <Wrapper>
       <Toggle />
