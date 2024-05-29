@@ -65,7 +65,7 @@ export const UserItemSkeleton = () => {
       <Skeleton className="min-h-[32px] min-w-[32px] rounded-full" />
 
       <div className="flex-1">
-        <Skeleton className="h-6 rounded-[1.5rem]" />
+        <Skeleton className="h-6" />
       </div>
     </li>
   );

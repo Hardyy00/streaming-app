@@ -44,7 +44,7 @@ export const UserItem: React.FC<UserItemProps> = ({
             collapsed && "justify-center"
           )}
         >
-          <UserAvatar imageUrl={imageUrl} username={username} isLive={isLive} />
+          <UserAvatar imageUrl={imageUrl} username={username} />
 
           {!collapsed && (
             <p className="truncate">
@@ -56,17 +56,5 @@ export const UserItem: React.FC<UserItemProps> = ({
         </div>
       </Link>
     </Button>
-  );
-};
-
-export const UserItemSkeleton = () => {
-  return (
-    <li className="flex items-center gap-x-4 px-3 py-2">
-      <Skeleton className="min-h-[32px] min-w-[32px] rounded-full" />
-
-      <div className="flex-1">
-        <Skeleton className="h-6 rounded-[1.5rem]" />
-      </div>
-    </li>
   );
 };

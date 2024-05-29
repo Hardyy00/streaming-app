@@ -26,7 +26,7 @@ export const Recommended: React.FC<RecommendedProps> = ({ data }) => {
             key={user.id}
             username={user.username}
             imageUrl={user.imageUrl}
-            isLive={false}
+            isLive={true}
           />
         ))}
       </ul>
@@ -34,10 +34,10 @@ export const Recommended: React.FC<RecommendedProps> = ({ data }) => {
   );
 };
 
-export const RecommendedSkeleton: React.FC = () => {
+export const RecommendedSkeleton = () => {
   return (
     <ul>
-      {[...Array(6)].map((_, i) => (
+      {[...Array(3)].map((_, i) => (
         <UserItemSkeleton key={i} />
       ))}
     </ul>

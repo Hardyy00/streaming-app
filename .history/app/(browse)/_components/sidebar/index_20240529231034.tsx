@@ -3,6 +3,8 @@ import { Recommended, RecommendedSkeleton } from "./Recommended";
 import Toggle from "./Toggle";
 import Wrapper from "./wrapper";
 import React from "react";
+import { UserItemSkeleton } from "./user-item";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const Sidebar = async () => {
   const recommended = await getRecommended();
@@ -20,8 +22,8 @@ const Sidebar = async () => {
 
 export const SidebarSkeleton: React.FC = () => {
   return (
-    <aside className="fixed left-0 flex flex-col w-[70px] lg:w-60 h-full bg-background border-r border-[#2D2E35] z-50 pt-14">
-      <RecommendedSkeleton />
+    <aside className="fixed left-0 flex flex-col w-[70px] lg:w-60 h-full bg-background border-r border-[#2D2E35] z-50">
+      <Skeleton className="w-[10rem] h-[5rem] bg-gray-400" />
     </aside>
   );
 };

@@ -26,7 +26,7 @@ export const Recommended: React.FC<RecommendedProps> = ({ data }) => {
             key={user.id}
             username={user.username}
             imageUrl={user.imageUrl}
-            isLive={false}
+            isLive={true}
           />
         ))}
       </ul>
