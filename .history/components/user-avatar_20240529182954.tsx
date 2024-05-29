@@ -50,7 +50,7 @@ const UserAvatar: React.FC<UserAvatarProps> = ({
       {canShowBadge && (
         // <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2"></div>
 
-        <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2">
+        <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
           <LiveBadge />
         </div>
       )}
@@ -59,11 +59,3 @@ const UserAvatar: React.FC<UserAvatarProps> = ({
 };
 
 export default UserAvatar;
-
-interface UserAvatarSkeletonProps extends VariantProps<typeof avatarSizes> {}
-
-export const UserAvatarSkeleton: React.FC<UserAvatarSkeletonProps> = ({
-  size,
-}) => {
-  return <Skeleton className={cn("rounded-full", avatarSizes({ size }))} />;
-};

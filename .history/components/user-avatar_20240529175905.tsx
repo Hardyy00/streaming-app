@@ -2,7 +2,6 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "./ui/skeleton";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import LiveBadge from "./live-badge";
 
 const avatarSizes = cva("", {
   variants: {
@@ -41,9 +40,9 @@ const UserAvatar: React.FC<UserAvatarProps> = ({
       >
         <AvatarImage src={imageUrl} className="object-cover" />
         <AvatarFallback>
-          {/* if image is loading display first and last characters e.g HG */}
-          {username[0].toUpperCase()}
-          {username[username.length - 1].toUpperCase()}
+          {/* if image is loading display first and last characters e.g H G */}
+          {username[0]}
+          {username[username.length - 1]}
         </AvatarFallback>
       </Avatar>
 
@@ -51,7 +50,7 @@ const UserAvatar: React.FC<UserAvatarProps> = ({
         // <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2"></div>
 
         <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2">
-          <LiveBadge />
+          Live
         </div>
       )}
     </div>
@@ -59,11 +58,3 @@ const UserAvatar: React.FC<UserAvatarProps> = ({
 };
 
 export default UserAvatar;
-
-interface UserAvatarSkeletonProps extends VariantProps<typeof avatarSizes> {}
-
-export const UserAvatarSkeleton: React.FC<UserAvatarSkeletonProps> = ({
-  size,
-}) => {
-  return <Skeleton className={cn("rounded-full", avatarSizes({ size }))} />;
-};

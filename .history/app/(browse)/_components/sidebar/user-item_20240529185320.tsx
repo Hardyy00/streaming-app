@@ -44,7 +44,12 @@ export const UserItem: React.FC<UserItemProps> = ({
             collapsed && "justify-center"
           )}
         >
-          <UserAvatar imageUrl={imageUrl} username={username} isLive={isLive} />
+          <UserAvatar
+            imageUrl={imageUrl}
+            username={username}
+            isLive={isLive}
+            showBadge
+          />
 
           {!collapsed && (
             <p className="truncate">

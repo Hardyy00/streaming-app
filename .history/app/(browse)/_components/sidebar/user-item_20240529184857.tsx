@@ -7,7 +7,6 @@ import { useSidebar } from "@/store/use-sidebar";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import UserAvatar from "@/components/user-avatar";
-import LiveBadge from "@/components/live-badge";
 
 interface UserItemProps {
   username: string;
@@ -46,13 +45,7 @@ export const UserItem: React.FC<UserItemProps> = ({
         >
           <UserAvatar imageUrl={imageUrl} username={username} isLive={isLive} />
 
-          {!collapsed && (
-            <p className="truncate">
-              {username[0].toUpperCase().concat(username.slice(1))}
-            </p>
-          )}
-
-          {!collapsed && isLive && <LiveBadge />}
+          {!collapsed && <p>{username}</p>}
         </div>
       </Link>
     </Button>

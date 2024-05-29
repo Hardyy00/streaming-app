@@ -7,7 +7,6 @@ import { useSidebar } from "@/store/use-sidebar";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import UserAvatar from "@/components/user-avatar";
-import LiveBadge from "@/components/live-badge";
 
 interface UserItemProps {
   username: string;
@@ -51,8 +50,6 @@ export const UserItem: React.FC<UserItemProps> = ({
               {username[0].toUpperCase().concat(username.slice(1))}
             </p>
           )}
-
-          {!collapsed && isLive && <LiveBadge />}
         </div>
       </Link>
     </Button>

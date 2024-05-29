@@ -65,5 +65,5 @@ interface UserAvatarSkeletonProps extends VariantProps<typeof avatarSizes> {}
 export const UserAvatarSkeleton: React.FC<UserAvatarSkeletonProps> = ({
   size,
 }) => {
-  return <Skeleton className={cn("rounded-full", avatarSizes({ size }))} />;
+  return <Skeleton className={cn("rounded-full")}></Skeleton>;
 };
