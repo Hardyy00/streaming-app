@@ -34,7 +34,7 @@ export const UserItem: React.FC<UserItemProps> = ({
       className={cn(
         "w-full h-12",
         collapsed ? "justify-center" : "justify-start",
-        isActive && "bg-gray-400/10 rounded-xl"
+        isActive && "bg-gray-400/10 rounded-md"
       )}
       asChild
     >

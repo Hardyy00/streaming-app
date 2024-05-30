@@ -1,5 +1,6 @@
 import { db } from "./db";
 import { getSelf } from "./auth-service";
+import { getSelf } from "./auth-service";
 
 export const getRecommended = async () => {
   let userId;
@@ -14,19 +15,12 @@ export const getRecommended = async () => {
   let users = [];
 
   if (userId) {
-    // if user if logged in , then get recommendations except him
     users = await db.user.findMany({
       orderBy: {
         createdAt: "desc",
       },
-      where: {
-        NOT: {
-          id: userId,
-        },
-      },
     });
   } else {
-    // if not logged in, then get recommendations including him
     users = await db.user.findMany({
       orderBy: {
         createdAt: "desc",
