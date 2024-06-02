@@ -59,7 +59,7 @@ export const followUser = async (id: string) => {
   if (existingFollow) {
     // return ;
 
-    throw new Error("User already followed");
+    throw new Error("User is already followed");
   }
 
   const follow = await db.follow.create({
@@ -104,16 +104,4 @@ export const unFollowUser = async (id: string) => {
   if (!existingFollow) {
     throw new Error("Not Following");
   }
-
-  const follow = await db.follow.delete({
-    where: {
-      id: existingFollow.id,
-    },
-    include: {
-      follower: true,
-      following: true,
-    },
-  });
-
-  return follow;
 };

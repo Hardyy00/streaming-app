@@ -109,11 +109,5 @@ export const unFollowUser = async (id: string) => {
     where: {
       id: existingFollow.id,
     },
-    include: {
-      follower: true,
-      following: true,
-    },
   });
-
-  return follow;
 };

@@ -27,7 +27,7 @@ export default function RootLayout({
             forcedTheme="dark"
             storageKey="streamers-theme"
           >
-            <Toaster theme="light" position="top-center" />
+            <Toaster></Toaster>
             {children}
           </ThemeProvider>
         </body>

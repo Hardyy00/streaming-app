@@ -1,0 +1,18 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import React from "react";
+import { onFollow } from "@/actions/follow";
+import { getSelf } from "@/lib/auth-service";
+
+export const Actions: React.FC = () => {
+  const onClick: React.MouseEventHandler<HTMLButtonElement> = async () => {
+    const self = await getSelf();
+    onFollow(self.id);
+  };
+  return (
+    <Button variant={"primary"} onClick={onClick}>
+      Follow
+    </Button>
+  );
+};

@@ -4,7 +4,7 @@ import { dark } from "@clerk/themes";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
-import { Toaster } from "sonner";
+import {Toaster}
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,12 +22,12 @@ export default function RootLayout({
     <ClerkProvider appearance={{ baseTheme: dark }}>
       <html lang="en">
         <body className={inter.className}>
+          {" "}
           <ThemeProvider
             attribute="class"
             forcedTheme="dark"
             storageKey="streamers-theme"
           >
-            <Toaster theme="light" position="top-center" />
             {children}
           </ThemeProvider>
         </body>

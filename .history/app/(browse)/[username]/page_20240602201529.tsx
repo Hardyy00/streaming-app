@@ -23,7 +23,7 @@ const UserPage: React.FC<UserPageProps> = async ({ params }) => {
       <p>Username : {user.username}</p>
       <p>User Id: {user.id}</p>
       <p>Is Following : {isFollowing.toString()}</p>
-      <Actions userId={user.id} isFollowing={isFollowing} />
+      <Actions username={params.username} />
     </div>
   );
 };

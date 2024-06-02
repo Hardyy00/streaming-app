@@ -105,15 +105,10 @@ export const unFollowUser = async (id: string) => {
     throw new Error("Not Following");
   }
 
-  const follow = await db.follow.delete({
+  await db.follow.deleteMany({
     where: {
-      id: existingFollow.id,
-    },
-    include: {
-      follower: true,
-      following: true,
+      followerId: self.id,
+      followingId: otherUser.id,
     },
   });
-
-  return follow;
 };
