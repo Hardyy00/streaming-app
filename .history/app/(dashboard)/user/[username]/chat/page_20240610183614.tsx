@@ -24,18 +24,6 @@ const ChatPage: React.FC = async () => {
           label="Enable Chat"
           value={stream.isChatEnabled}
         />
-
-        <ToggleCard
-          field="isChatDelayed"
-          label="Delay Chat"
-          value={stream.isChatDelayed}
-        />
-
-        <ToggleCard
-          field="isChatFollowersOnly"
-          label="Allow Only Followers"
-          value={stream.isChatFollowersOnly}
-        />
       </div>
     </div>
   );

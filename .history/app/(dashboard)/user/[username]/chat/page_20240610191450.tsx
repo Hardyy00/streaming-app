@@ -8,6 +8,8 @@ const ChatPage: React.FC = async () => {
   const self = await getSelf();
   const stream = await getStreamByUserId(self.id);
 
+  console.log(stream);
+
   if (!stream) {
     throw new Error("Stream not found");
   }

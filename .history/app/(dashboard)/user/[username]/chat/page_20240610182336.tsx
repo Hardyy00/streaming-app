@@ -18,23 +18,11 @@ const ChatPage: React.FC = async () => {
         <h1 className="text-2xl font-bold">Chat Settings</h1>
       </div>
 
-      <div className="space-y-4">
+      <div className="">
         <ToggleCard
           field="isChatEnabled"
           label="Enable Chat"
           value={stream.isChatEnabled}
-        />
-
-        <ToggleCard
-          field="isChatDelayed"
-          label="Delay Chat"
-          value={stream.isChatDelayed}
-        />
-
-        <ToggleCard
-          field="isChatFollowersOnly"
-          label="Allow Only Followers"
-          value={stream.isChatFollowersOnly}
         />
       </div>
     </div>

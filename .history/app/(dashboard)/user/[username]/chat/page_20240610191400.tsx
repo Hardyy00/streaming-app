@@ -8,6 +8,8 @@ const ChatPage: React.FC = async () => {
   const self = await getSelf();
   const stream = await getStreamByUserId(self.id);
 
+  console.log(stream);
+
   if (!stream) {
     throw new Error("Stream not found");
   }
@@ -26,15 +28,15 @@ const ChatPage: React.FC = async () => {
         />
 
         <ToggleCard
-          field="isChatDelayed"
-          label="Delay Chat"
-          value={stream.isChatDelayed}
+          field="isChatEnabled"
+          label="Enable Chat"
+          value={stream.isChatEnabled}
         />
 
         <ToggleCard
-          field="isChatFollowersOnly"
-          label="Allow Only Followers"
-          value={stream.isChatFollowersOnly}
+          field="isChatEnabled"
+          label="Enable Chat"
+          value={stream.isChatEnabled}
         />
       </div>
     </div>

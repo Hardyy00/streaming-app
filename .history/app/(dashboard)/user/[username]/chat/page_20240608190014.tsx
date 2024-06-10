@@ -2,7 +2,6 @@ import { Switch } from "@/components/ui/switch";
 import { getSelf } from "@/lib/auth-service";
 import { getStreamByUserId } from "@/lib/streams-service";
 import React from "react";
-import { ToggleCard } from "./_components/toggle-card";
 
 const ChatPage: React.FC = async () => {
   const self = await getSelf();
@@ -18,24 +17,8 @@ const ChatPage: React.FC = async () => {
         <h1 className="text-2xl font-bold">Chat Settings</h1>
       </div>
 
-      <div className="space-y-4">
-        <ToggleCard
-          field="isChatEnabled"
-          label="Enable Chat"
-          value={stream.isChatEnabled}
-        />
-
-        <ToggleCard
-          field="isChatDelayed"
-          label="Delay Chat"
-          value={stream.isChatDelayed}
-        />
-
-        <ToggleCard
-          field="isChatFollowersOnly"
-          label="Allow Only Followers"
-          value={stream.isChatFollowersOnly}
-        />
+      <div>
+        <Switch />
       </div>
     </div>
   );

@@ -37,6 +37,7 @@ const ChatPage: React.FC = async () => {
           value={stream.isChatFollowersOnly}
         />
       </div>
+      <input type="checkbox" />
     </div>
   );
 };
