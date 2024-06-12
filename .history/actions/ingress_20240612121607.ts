@@ -9,7 +9,6 @@ import {
   CreateIngressOptions,
   TrackSource,
   IngressVideoEncodingPreset,
-  IngressVideoOptions,
 } from "livekit-server-sdk";
 
 import { db } from "@/lib/db";
@@ -31,17 +30,16 @@ export const createIngress = async (ingressType: IngressInput) => {
     roomName: self.id,
     participantName: self.username,
     participantIdentity: self.id,
+    video: {
+      source: TrackSource.CAMERA,
+    },
   };
 
   if (ingressType === IngressInput.WHIP_INPUT) {
     options.enableTranscoding = false;
   } else {
-    options.video = new IngressVideoOptions({
-      source: TrackSource.CAMERA,
-      encodingOptions: {
-        case: "preset",
-        value: IngressVideoEncodingPreset.H264_1080P_30FPS_3_LAYERS,
-      },
-    });
+    options.video = {
+      name: "hardik",
+    };
   }
 };

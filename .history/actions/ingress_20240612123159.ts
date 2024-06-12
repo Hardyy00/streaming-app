@@ -38,10 +38,7 @@ export const createIngress = async (ingressType: IngressInput) => {
   } else {
     options.video = new IngressVideoOptions({
       source: TrackSource.CAMERA,
-      encodingOptions: {
-        case: "preset",
-        value: IngressVideoEncodingPreset.H264_1080P_30FPS_3_LAYERS,
-      },
+      encodingOptions: {},
     });
   }
 };
