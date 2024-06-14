@@ -14,6 +14,9 @@ const CreatorPage: React.FC<CreatorPageProps> = async ({ params }) => {
   const externalUser = await getSelf();
   const user = await getUserByUsername(params.username);
 
+  console.log("user ", user);
+  console.log("external user", externalUser);
+
   if (!user || externalUser?.id !== user?.id || !user.stream) {
     throw new Error("Unauthorized");
   }

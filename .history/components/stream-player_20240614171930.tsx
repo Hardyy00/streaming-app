@@ -25,8 +25,11 @@ export const StreamPlayer: React.FC<StreamPlayerProps> = ({
       <LiveKitRoom
         token={token}
         serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_WS_URL}
+        className="grid grid-cols-1 lg:gap-y-0 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-6 h-full"
       >
-        Stream
+        <div className="space-y-4 col-span-1 xl:col-span-2 2xl:col-span-5lg:overflow-y-auto hidden-scrollbar pb-10">
+          <Video hostName={user.username} hostIdentity={user.id} />
+        </div>
       </LiveKitRoom>
     </>
   );

@@ -28,6 +28,8 @@ import { toast } from "sonner";
 const RTMP = String(IngressInput.RTMP_INPUT);
 const WHIP = String(IngressInput.WHIP_INPUT);
 
+// console.log(typeof RTMP + " " + typeof WHIP + " " + RTMP + " " + WHIP);
+
 type IngressType = typeof RTMP | typeof WHIP;
 
 export const ConnectModal = () => {
