@@ -1,7 +1,7 @@
 "use client";
 
 import { Participant, Track } from "livekit-client";
-import { ElementRef, useRef, useState, useEffect } from "react";
+import { ElementRef, useRef, useState } from "react";
 import { useTracks } from "@livekit/components-react";
 import { FullscreenControl } from "./fullscreen-control";
 import { useEventListener } from "usehooks-ts";
@@ -43,10 +43,10 @@ export const LiveVideo: React.FC<LiveVideoProps> = ({ participant }) => {
   const toggleMute = () => {
     const isMuted = volume === 0;
 
-    setVolume(isMuted ? 50 : 0);
-    if (videoRef?.current) {
-      videoRef.current.muted = !isMuted;
-      videoRef.current.volume = isMuted ? 0.5 : 0;
+    if (isMuted) {
+      setVolume(70);
+    } else {
+      setVolume(0);
     }
   };
 
@@ -66,8 +66,8 @@ export const LiveVideo: React.FC<LiveVideoProps> = ({ participant }) => {
       <div className="absolute top-0  h-full w-full opacity-0 hover:opacity-100 hover:transition-all">
         <div className="absolute bottom-0 flex h-14 w-full items-center justify-between bg-gradient-to-r from bg-neutral-900 px-4">
           <VolumeControl
-            onChange={onVolumeChange}
-            onToggle={toggleMute}
+            onChange={setVolume}
+            onToggle={() => {}}
             value={volume}
           />
           <FullscreenControl

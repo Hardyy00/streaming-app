@@ -38,11 +38,16 @@ export const StreamPlayer: React.FC<StreamPlayerProps> = ({
           collapse && "lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2"
         )}
       >
-        <div className="space-y-4 col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-5 lg:overflow-y-auto hidden-scrollbar pb-10">
+        <div className="space-y-4 col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-5 lg:overflow-y-auto hidden-scrollbar pb-10 border border-white">
           <Video hostName={user.username} hostIdentity={user.id} />
         </div>
 
-        <div className={cn("col-span-1", collapse && "hidden")}>
+        <div
+          className={cn(
+            "col-span-1 border border-red-400",
+            collapse && "hidden"
+          )}
+        >
           <Chat
             hostIdentity={user.id}
             viewerName={name}

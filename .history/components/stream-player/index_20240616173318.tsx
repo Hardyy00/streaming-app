@@ -7,7 +7,6 @@ import { useChatSidebar } from "@/store/use-chat-sidebar";
 import { cn } from "@/lib/utils";
 
 import Video from "./video";
-import { Chat } from "./chat";
 
 interface StreamPlayerProps {
   user: User & { stream: Stream | null };
@@ -35,23 +34,11 @@ export const StreamPlayer: React.FC<StreamPlayerProps> = ({
         serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_WS_URL}
         className={cn(
           "grid grid-cols-1 lg:gap-y-0 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-6 h-full",
-          collapse && "lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2"
+          collapse && "lg:grid-cols-2 xl:grid-cols-2"
         )}
       >
-        <div className="space-y-4 col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-5 lg:overflow-y-auto hidden-scrollbar pb-10">
+        <div className="space-y-4 col-span-1 xl:col-span-2 2xl:col-span-5lg:overflow-y-auto hidden-scrollbar pb-10">
           <Video hostName={user.username} hostIdentity={user.id} />
-        </div>
-
-        <div className={cn("col-span-1", collapse && "hidden")}>
-          <Chat
-            hostIdentity={user.id}
-            viewerName={name}
-            hostName={user.username}
-            isFollowing={isFollowing}
-            isChatEnabled={stream.isChatEnabled}
-            isChatDelayed={stream.isChatDelayed}
-            isChatFollowersOnly={stream.isChatFollowersOnly}
-          />
         </div>
       </LiveKitRoom>
     </>

@@ -42,7 +42,7 @@ export const StreamPlayer: React.FC<StreamPlayerProps> = ({
           <Video hostName={user.username} hostIdentity={user.id} />
         </div>
 
-        <div className={cn("col-span-1", collapse && "hidden")}>
+        <div className={cn("col-span-2", collapse && "hidden")}>
           <Chat
             hostIdentity={user.id}
             viewerName={name}

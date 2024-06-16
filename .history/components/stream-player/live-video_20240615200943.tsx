@@ -1,7 +1,7 @@
 "use client";
 
 import { Participant, Track } from "livekit-client";
-import { ElementRef, useRef, useState, useEffect } from "react";
+import { ElementRef, useRef, useState } from "react";
 import { useTracks } from "@livekit/components-react";
 import { FullscreenControl } from "./fullscreen-control";
 import { useEventListener } from "usehooks-ts";
