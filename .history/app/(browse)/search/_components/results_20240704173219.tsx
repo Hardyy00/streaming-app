@@ -1,0 +1,4 @@
+interface ResultsProps{
+
+    term?:
+}
