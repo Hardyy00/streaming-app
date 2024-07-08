@@ -62,11 +62,7 @@ export const Actions: React.FC<ActionsProps> = ({
     } else {
       startBlockTransition(() =>
         onBlock(userId).then((data) => {
-          toast.success(
-            data
-              ? `You blocked ${data.blocked.username}`
-              : "You successfully kicked the guest"
-          );
+          toast.success(`You blocked ${data.blocked.username}`);
         })
       );
     }
